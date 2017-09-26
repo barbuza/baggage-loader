@@ -6,10 +6,10 @@
     "webpack",
     "loader"
   ],
-  "homepage": "https://github.com/deepsweet/baggage-loader",
+  "homepage": "https://github.com/barbuza/baggage-loader",
   "repository": {
     "type": "git",
-    "url": "git://github.com/deepsweet/baggage-loader.git"
+    "url": "git://github.com/barbuza/baggage-loader.git"
   },
   "author": {
     "name": "Kir Belevich",
@@ -17,9 +17,11 @@
     "url": "https://github.com/deepsweet"
   },
   "main": "index.js",
+  "dependencies": {
+    "loader-utils": "^0.2.16"
+  },
   "peerDependencies": {
     "webpack": "1.x.x",
-    "loader-utils": "0.x.x",
     "source-map": "0.x.x"
   },
   "devDependencies": {
