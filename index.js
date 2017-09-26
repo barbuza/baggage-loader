@@ -14,11 +14,15 @@ var injectBanner = '\n/* injects from baggage-loader */\n';
 module.exports = function(source, sourceMap) {
     // parseQuery will always give us an object, for back-compat we
     // want to know if we're working with JSON query or query string
-    if (!util.isJSONString(this.query.replace('?', ''))) {
-        return legacyLoader.call(this, source, sourceMap);
+    var query;
+    try {
+        if (!util.isJSONString(this.query.replace('?', ''))) {
+            return legacyLoader.call(this, source, sourceMap);
+        }
+        query = loaderUtils.parseQuery(this.query);
+    } catch (e) {
+        query = this.query;
     }
-
-    var query = loaderUtils.parseQuery(this.query);
 
     // /foo/bar/file.js
     var srcFilepath = this.resourcePath;
