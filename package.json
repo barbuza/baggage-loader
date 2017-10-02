@@ -21,7 +21,7 @@
     "loader-utils": "^0.2.16"
   },
   "peerDependencies": {
-    "webpack": "1.x.x",
+    "webpack": "*",
     "source-map": "0.x.x"
   },
   "devDependencies": {
